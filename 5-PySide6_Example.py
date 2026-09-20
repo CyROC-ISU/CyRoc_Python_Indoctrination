@@ -15,8 +15,11 @@ class main(QWidget):
         self.main_label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         self.run_btn = QPushButton("Press Here!")
-        self.run_btn.clicked.connect(lambda: self.main_label.setText("Happy Birthday!"))
+        self.run_btn.clicked.connect(self.change_label)
         self.main_layout.addWidget(self.run_btn)
+
+    def change_label(self, text:str):
+        self.main_label.setText(text)
 
 if __name__ == "__main__":
     app = QApplication()

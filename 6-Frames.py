@@ -52,6 +52,6 @@ class alt(QWidget):
 
 if __name__ == "__main__":
     app = QApplication()
-    window = main()
+    window = alt(1000)
     window.show()
     app.exec()

@@ -12,18 +12,17 @@ num_int: int = 5
 num_float: float = 5.5
 val_bool: bool = True
 
-print(type(num_int), num_int)
+#print(type(num_int), num_int)
 
-sys.exit()
 
 # arrays
 list_ary: list = [0, 1, 1, 2, 3, 5, 8, 13] # mutable
 tuple_ary: tuple = (0, 1, 1, 2, 3, 5, 8, 13) # immutable
 string_ary: str = "This is a string"
 
-print("First index = ", list_ary[0])
+#print("First index = ", string_ary[1])
 
-sys.exit()
+#sys.exit()
 
 # array quirks
 list_ary[2] = 10
@@ -31,47 +30,49 @@ list_ary[2] = 10
 
 an_ary = list_ary
 an_ary[2] = 10
-print(list_ary)
-sys.exit()
+#print(list_ary)
+#sys.exit()
 
 another_ary = list_ary.copy()
 another_ary[3] = 45
-print(list_ary)
-sys.exit()
+#print(list_ary[3])
+#sys.exit()
 
 # dict
 basic_dict = dict(key1=1, key2=4, key3=34)
-print(basic_dict["key1"])
-sys.exit()
+#print(basic_dict["key1"])
+#sys.exit()
 
 # logic statements
-number = int(input("input number greater than 50: "))
+"""number = int(input("input number greater than 50: "))
 if number > 50:
     print("yes!")
 elif number > 40:
     print("close!")
 else:
     print("no!")
-sys.exit()
+sys.exit()"""
 
 # for vs while loop
-for i in range(0, 10):
+"""for i in range(0, 10):
     print(i)
 
-sys.exit()
+sys.exit()"""
 
-print() # empty line
-i = 10
+#print() # empty line
+"""i = 10
 while i > 1:
     print(i)
     i -= 1
-sys.exit()
+sys.exit()"""
 
 # real use?
 num_entries = 20
-sequence = [0,1]
-for i in range(2,num_entries):
+sequence = (0,1)
+i = 2
+while i < num_entries:
     sequence.append(sequence[i-1] + sequence[i-2])
+    i += 1
 
 print(sequence)
 

@@ -1,3 +1,5 @@
+import sys
+
 class Vehicle:
     def __init__(self, speed:float, starting_position:float=0.0):
         self.position: float = starting_position
@@ -13,6 +15,14 @@ class Vehicle:
 
     def __repr__(self) -> str:
         return f"Position: {self.position}"
+
+    def __add__(self, other:Vehicle) -> float:
+        return self.position + other.position
+
+my_vehicle = Vehicle(3)
+my_vehicle.move(3,1)
+
+other_vehicle = Vehicle(2, starting_position=-3)
 
 class Car(Vehicle):
     def __init__(self, speed:float, fuel_capacity:float, starting_fuel:float, fuel_eff:float, starting_position:float=0):
@@ -56,8 +66,9 @@ class Car(Vehicle):
     def __repr__(self) -> str:
         return super().__repr__() + f", Fuel Remaining: {self.fuel_amt}"
 
-my_car = Car(10, 100, 100, 0.7)
-my_car.move(10,1)
+my_car = Car(speed=10, fuel_capacity=100, starting_fuel=100, fuel_eff=0.7, starting_position=-100)
+other_car = Car(speed=8, fuel_capacity=60, starting_fuel=60, fuel_eff=0.9)
+my_car.move(100000,1)
 print(my_car)
 
 my_car.refuel(50)
